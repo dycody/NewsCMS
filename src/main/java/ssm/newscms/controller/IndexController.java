@@ -15,8 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 import ssm.newscms.util.StringUtil;
 
 
-@Controller
+@Controller(value="/")
 public class IndexController {
+	
+	
 	
 	@RequestMapping(value="/{path}")
 	public ModelAndView topLevel(@PathVariable String path,HttpServletRequest request){

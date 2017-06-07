@@ -19,7 +19,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
 
-		<c:import var="menu" url="/resource/menu.xml" charEncoding="UTF-8"/>
+		<c:import var="menu" url="/resource/config/menu.xml" charEncoding="UTF-8"/>
 		<x:parse xml="${menu}" var="output" />
 		<ul class="sidebar-menu">
 			<li class="header"><x:out select="$output/menu/nodes/header" /></li>

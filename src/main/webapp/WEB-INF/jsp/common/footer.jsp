@@ -45,3 +45,13 @@
 <script src="<c:url value="/resource/"/>dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<c:url value="/resource/"/>dist/js/demo.js"></script>
+
+
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/ui/ui-bootstrap-tpls-0.13.1.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-resource.min.js"></script>
+
+<script type="text/javascript" src="<c:url value="/resource/"/>js/cmsApp.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/${moduleCode}Controller.js"></script>
+

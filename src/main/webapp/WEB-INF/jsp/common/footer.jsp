@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <!-- /.content-wrapper -->
 <footer class="main-footer">
 	<div class="pull-right hidden-xs">
-		<b>Version</b> 2.3.12
+		<b>Version</b> 1.0.0
 	</div>
-	<strong>Copyright &copy; 2014-2016 <a
-		href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+	<strong>Copyright &copy; 2017 <a
+		href="">WZU-network</a>.
 	</strong> All rights reserved.
 </footer>
+
 
 <!-- jQuery 2.2.3 -->
 <script	src="<c:url value="/resource/"/>plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -18,8 +20,10 @@
 <script>
 	$.widget.bridge('uibutton', $.ui.button);
 </script>
+<script src="<c:url value="/resource/"/>jquery/jquery-1.11.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<c:url value="/resource/"/>bootstrap/js/bootstrap.min.js"></script>
+<script src="<c:url value="/resource/"/>bootstrap/js/bootstrap-select.min.js"></script>
 <!-- Morris.js charts -->
 <script	src="<c:url value="/resource/"/>plugins/morris/raphael-min.js"></script>
 <script src="<c:url value="/resource/"/>plugins/morris/morris.min.js"></script>
@@ -47,11 +51,13 @@
 <script src="<c:url value="/resource/"/>dist/js/demo.js"></script>
 
 
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular.js"></script>
 <script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/ui/ui-bootstrap-tpls-0.13.1.min.js"></script>
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-sanitize.js"></script>
 <script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-resource.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-chosen.min.js"></script>
 
+<jsp:include flush="true" page="/WEB-INF/jsp/common/alertModal.jsp" /> 
 <script type="text/javascript" src="<c:url value="/resource/"/>js/cmsApp.js"></script>
 <script type="text/javascript" src="<c:url value="/resource/"/>js/${moduleCode}Controller.js"></script>
 

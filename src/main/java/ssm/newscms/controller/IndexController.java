@@ -75,7 +75,7 @@ public class IndexController {
 			}
 		}
 		
-		model.put("moduleCode", fullPath.replace("/", "#"));
+		model.put("moduleCode", fullPath.replace("/", "_"));
 		ModelAndView mav = new ModelAndView(fullPath,model);
         return mav;
 	}

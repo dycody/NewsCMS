@@ -39,7 +39,7 @@ public class ArticleDaoImpl extends DaoBase implements ArticleDao {
 		if(instance == null) {
 			return 0;
 		}
-		String sql = "insert into acticle (title,body,create_date,create_user,update_date,update_user) "
+		String sql = "insert into article (title,body,create_date,create_user,update_date,update_user) "
 				+ "values (:title,:body,CURRENT_TIMESTAMP,:createUserId,CURRENT_TIMESTAMP,:updateUserId)";
 		SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(
 				instance);
@@ -54,7 +54,7 @@ public class ArticleDaoImpl extends DaoBase implements ArticleDao {
 		if (id == null) {
 			return 0;
 		}
-		String sql = "delete from acticle where id = " + id;
+		String sql = "delete from article where id = " + id;
 		return jdbcTemplate.update(sql);
 	}
 
@@ -63,8 +63,8 @@ public class ArticleDaoImpl extends DaoBase implements ArticleDao {
 		if(instance == null) {
 			return 0;
 		}
-		String sql = "update acticle set title=:title,body=:body,update_date=CURRENT_TIMESTAMP,update_user=:updateUserId "
-				+ "where id = :acticleId";
+		String sql = "update article set title=:title,body=:body,update_date=CURRENT_TIMESTAMP,update_user=:updateUserId "
+				+ "where id = :articleId";
 		SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(
 				instance);
 		return namedParamJDBCResource.update(sql, sqlParameterSource);
@@ -81,7 +81,7 @@ public class ArticleDaoImpl extends DaoBase implements ArticleDao {
 		if (id == null) {
 			return null;
 		}
-		String sql = "select * from v_acticle where id = "+id;
+		String sql = "select * from v_article where id = "+id;
 		List<Article> list = jdbcTemplate.query(sql,
 				new ArticleRowMapper());
 		if (CollectionUtils.isEmpty(list)) {

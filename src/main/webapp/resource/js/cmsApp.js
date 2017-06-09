@@ -97,7 +97,7 @@ cmsApp.service('cmsService', function($http) {
 				method : "post",
 				url : URL,
 				headers : {
-					'Content-Type' : 'application/json;charset=UTF-8'
+					'Content-Type' : 'application/json'
 				}
 			};
 		if(jsonData){

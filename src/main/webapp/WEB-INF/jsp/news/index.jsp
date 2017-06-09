@@ -7,7 +7,8 @@
 <jsp:include flush="true" page="/WEB-INF/jsp/common/head.jsp" />
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav" ng-controller="${moduleCode}Controller" ng-cloak>
+<body class="hold-transition skin-blue layout-top-nav"
+	ng-controller="${moduleCode}Controller" ng-cloak>
 	<div class="wrapper">
 		<jsp:include flush="true" page="/WEB-INF/jsp/common/header_news.jsp" />
 
@@ -29,6 +30,7 @@
 						<div class="col-xs-12">
 							<div class="box">
 								<div class="box-header">
+									<i class="ion ion-clipboard"></i>
 									<h3 class="box-title">新闻列表</h3>
 
 									<div class="box-tools">
@@ -47,32 +49,23 @@
 								<!-- /.box-header -->
 								<div class="box-body table-responsive no-padding">
 									<table class="table table-hover">
-										<tbody>
+										<thead>
 											<tr>
 												<th width="60%">新闻标题</th>
-												<th width="20%">发布时间</th>
 												<th width="20%">发布人</th>
+												<th width="20%">发布时间</th>
 											</tr>
-											<tr>
-												<td>183</td>
-												<td>11-7-2014</td>
-												<td><span class="label label-success">Approved</span></td>
+										</thead>
+										<tbody>
+											<tr ng-repeat="x in pageData.datas">
+												<td><a href="show?id={{x.articleId}}">{{ x.title }}</a></td>
+												<td>
+												<span class="label label-danger" ng-if="x.updateUserType==0">{{ x.updateUserName }}</span>
+												<span class="label label-primary" ng-if="x.updateUserType!=0">{{ x.updateUserName }}</span>
+												</td>
+												<td>{{ x.updateDate }}</td>
 											</tr>
-											<tr>
-												<td>219</td>
-												<td>11-7-2014</td>
-												<td><span class="label label-warning">Pending</span></td>
-											</tr>
-											<tr>
-												<td>657</td>
-												<td>11-7-2014</td>
-												<td><span class="label label-primary">Approved</span></td>
-											</tr>
-											<tr>
-												<td>175</td>
-												<td>11-7-2014</td>
-												<td><span class="label label-danger">Denied</span></td>
-											</tr>
+
 										</tbody>
 									</table>
 								</div>
@@ -90,71 +83,6 @@
 							<!-- /.box -->
 						</div>
 					</div>
-
-
-
-
-
-
-					<div class="col-md-12">
-						<div class="box box-primary">
-							<div class="box-header ui-sortable-handle" style="cursor: move;">
-								<i class="ion ion-clipboard"></i>
-
-								<h3 class="box-title">新闻列表</h3>
-
-								<div class="box-tools pull-right">
-									<ul class="pagination pagination-sm inline">
-										<li><a href="#">«</a></li>
-										<li><a href="#">»</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<div class="table-responsive">
-									<table class="table no-margin">
-										<thead>
-											<tr>
-												<th width="60%">新闻标题</th>
-												<th width="20%">发布时间</th>
-												<th width="20%">发布人</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><a href="pages/examples/invoice.html">OR9842</a></td>
-												<td>Call of Duty IV</td>
-												<td><span class="label label-success">Shipped</span></td>
-											</tr>
-											<tr>
-												<td><a href="pages/examples/invoice.html">OR1848</a></td>
-												<td>Samsung Smart TV</td>
-												<td><span class="label label-warning">Pending</span></td>
-											</tr>
-											<tr>
-												<td><a href="pages/examples/invoice.html">OR7429</a></td>
-												<td>iPhone 6 Plus</td>
-												<td><span class="label label-danger">Delivered</span></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<!-- /.table-responsive -->
-							</div>
-							<!-- /.box-body -->
-							<div class="box-footer clearfix"></div>
-							<!-- /.box-footer -->
-						</div>
-
-					</div>
-
-
-
-
-
-
-
 
 
 

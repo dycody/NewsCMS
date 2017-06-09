@@ -16,9 +16,12 @@ public class ArticleRowMapper implements RowMapper<Article> {
 		result.setTitle(rs.getString("title"));
 		result.setBody(rs.getString("body"));
 		result.setCreateDate(rs.getDate("create_date"));
-		result.setCreateUserId(rs.getInt("create_user"));
+		result.setCreateUserId(rs.getInt("create_user_id"));
 		result.setUpdateDate(rs.getDate("update_date"));
-		result.setUpdateUserId(rs.getInt("update_user"));
+		result.setUpdateUserId(rs.getInt("update_user_id"));
+		result.setCreateUserName(rs.getString("create_user_name"));
+		result.setUpdateUserName(rs.getString("update_user_name"));
+		result.setUpdateUserType(rs.getInt("update_user_type"));
 		return result;
 	}
 

@@ -32,7 +32,7 @@
 						<!-- Menu Toggle Button --> <a href="#"> 
 						 <!-- hidden-xs hides the username on small devices so only the image appears. -->
 						 <i class="fa fa-fw fa-group"></i>
-							<span class="hidden-xs">Alexander Pierce</span>
+							<span class="hidden-xs">登录用户1</span>
 					</a>
 					</li>
 				</ul>

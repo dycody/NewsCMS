@@ -8,8 +8,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
-		<jsp:include flush="true" page="/WEB-INF/jsp/common/header.jsp" />
-		<jsp:include flush="true" page="/WEB-INF/jsp/common/menu.jsp" />
+		<jsp:include flush="true" page="/WEB-INF/jsp/common/header_admin.jsp" />
 
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">

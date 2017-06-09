@@ -40,8 +40,7 @@
         <property name="maxInMemorySize" value="40960" />  
     </bean>
 
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"
 		p:viewClass="org.springframework.web.servlet.view.JstlView" p:order="0" />
 		

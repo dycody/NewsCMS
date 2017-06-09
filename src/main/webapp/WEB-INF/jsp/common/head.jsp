@@ -59,4 +59,6 @@
 <script type="text/javascript">
 	var rootPath = "<%=rootPath%>";
 	var moduleCode = "<%=moduleCode%>";
+	var nowDate = "<%=nowDate%>";
+	var articleId = "${id}";
 </script>

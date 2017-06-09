@@ -4,75 +4,42 @@
 
 		<header>MAIN NAVIGATION</header>
 		<node>
-			<name>论坛</name>
-			<url>t1_name1</url>
-			<icon>fa-dashboard</icon>
+			<name>返回新闻页</name>
+			<url>/NewsCMS/news/index</url>
+			<icon>fa-internet-explorer</icon>
+		</node>
+		<node>
+			<name>新闻管理</name>
+			<url>#</url>
+			<icon>fa-newspaper-o</icon>
 			<children>
 				<node>
-					<name>学习</name>
-					<url>name2/t2_name1</url>
+					<name>新闻列表</name>
+					<url>newslist</url>
 				</node>
 				<node>
-					<name>生活</name>
-					<url>name2/t2_name1</url>
-				</node>
-				<node>
-					<name>运动</name>
-					<url>name2/t2_name1</url>
-				</node>
-				<node>
-					<name>搞事</name>
-					<url>name2/t2_name1</url>
+					<name>新建新闻</name>
+					<url>newsadd</url>
 				</node>
 			</children>
 		</node>
 
 		<node>
-			<name>微博</name>
+			<name>用户管理</name>
 			<url>#</url>
-			<icon>fa-dashboard</icon>
+			<icon>fa-group</icon>
 			<children>
 				<node>
-					<name>我的圈子</name>
-					<url>name2/t2_name1</url>
+					<name>用户列表</name>
+					<url>userlist</url>
 				</node>
 				<node>
-					<name>特别关注</name>
-					<url>name2/t2_name1</url>
+					<name>添加用户</name>
+					<url>useradd</url>
 				</node>
 				<node>
-					<name>关于我的@</name>
-					<url>name2/t2_name1</url>
-				</node>
-			</children>
-		</node>
-		<node>
-			<name>聊天室</name>
-			<url>#</url>
-			<icon>fa-dashboard</icon>
-			<children>
-				<node>
-					<name>t2_name1</name>
-					<url>name2/t2_name1</url>
-				</node>
-			</children>
-		</node>
-		<node>
-			<name>个人空间</name>
-			<url>#</url>
-			<icon>fa-dashboard</icon>
-			<children>
-				<node>
-					<name>最新动态</name>
-					<url>name2/t2_name1</url>
-				</node>
-				<node>
-					<name>个人设置</name>
-					<url>name2/t2_name1</url>
-				</node>
-				<node>
-					<name>好友管理</name>
-					<url>name2/t2_name1</url>
+					<name>修改用户</name>
+					<url>userchange</url>
 				</node>
 			</children>
 		</node>

@@ -12,6 +12,31 @@ public class Article {
 	private Date updateDate;
 	private Integer updateUserId;
 	
+	/**
+	 * 表单外数据
+	 */
+	private String createUserName;
+	private String updateUserName;
+	private Integer updateUserType;
+	
+	public Integer getUpdateUserType() {
+		return updateUserType;
+	}
+	public void setUpdateUserType(Integer updateUserType) {
+		this.updateUserType = updateUserType;
+	}
+	public String getCreateUserName() {
+		return createUserName;
+	}
+	public void setCreateUserName(String createUserName) {
+		this.createUserName = createUserName;
+	}
+	public String getUpdateUserName() {
+		return updateUserName;
+	}
+	public void setUpdateUserName(String updateUserName) {
+		this.updateUserName = updateUserName;
+	}
 	public Integer getArticleId() {
 		return articleId;
 	}

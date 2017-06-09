@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-06-08 18:29:33
+Date: 2017-06-09 18:11:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,13 +29,14 @@ CREATE TABLE `article` (
   `update_user` int(10) unsigned NOT NULL,
   `remove` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of article
 -- ----------------------------
 INSERT INTO `article` VALUES ('1', '测试测试测试', '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试', '2017-06-08 16:40:14', '5', '2017-06-08 16:40:19', '5', '\0');
 INSERT INTO `article` VALUES ('2', '222', '3333333', '2017-06-08 16:40:35', '6', '2017-06-08 16:40:39', '6', '\0');
+INSERT INTO `article` VALUES ('3', '有内容的小新闻', '这是一篇有深度的内容', '2017-06-06 11:05:32', '9', '2017-06-12 11:05:46', '9', '\0');
 
 -- ----------------------------
 -- Table structure for user_basic
@@ -65,4 +66,4 @@ INSERT INTO `user_basic` VALUES ('10', 'user3', 'e10adc3949ba59abbe56', '1', '�
 -- View structure for v_article
 -- ----------------------------
 DROP VIEW IF EXISTS `v_article`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`192.168.207.1` SQL SECURITY DEFINER VIEW `v_article` AS select `A`.`id` AS `id`,`A`.`title` AS `title`,`A`.`body` AS `body`,`A`.`create_date` AS `create_date`,`u1`.`name` AS `create_user`,`A`.`update_date` AS `update_date`,`u2`.`name` AS `update_user` from ((`article` `A` left join `user_basic` `u1` on((`A`.`create_user` = `u1`.`id`))) left join `user_basic` `u2` on((`A`.`update_user` = `u2`.`id`))) order by `A`.`update_date` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`192.168.207.1` SQL SECURITY DEFINER VIEW `v_article` AS select `A`.`id` AS `id`,`A`.`title` AS `title`,`A`.`body` AS `body`,`A`.`create_date` AS `create_date`,`u1`.`name` AS `create_user_name`,`A`.`update_date` AS `update_date`,`u2`.`name` AS `update_user_name`,`A`.`create_user` AS `create_user_id`,`A`.`update_user` AS `update_user_id`,`A`.`remove` AS `remove`,`u2`.`type` AS `update_user_type` from ((`article` `A` left join `user_basic` `u1` on((`A`.`create_user` = `u1`.`id`))) left join `user_basic` `u2` on((`A`.`update_user` = `u2`.`id`))) order by `A`.`update_date` ;

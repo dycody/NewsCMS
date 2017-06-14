@@ -18,6 +18,7 @@ import ssm.newscms.model.Article;
 import ssm.newscms.service.ArticleService;
 import ssm.newscms.util.DateTimeUtil;
 import ssm.newscms.util.SerialUtil;
+import ssm.newscms.util.StringUtil;
 import ssm.newscms.vo.PageData;
 import ssm.newscms.vo.ResponseData;
 
@@ -30,13 +31,24 @@ public class ArticleController {
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseData save(@RequestBody Article article,
+	public ResponseData save(@RequestBody Map<String, Object> map,
 			HttpServletRequest request) {
+		Integer userId = new Integer(map.get("userId").toString());
+		String title = (String)map.get("title");
+		if(StringUtil.isNullOrEmpty(title)){
+			return new ResponseData(false,"标题不能为空");
+		}
+		String body = (String)map.get("body");
+		Article article = new Article();
+		article.setCreateUserId(userId);
+		article.setUpdateUserId(userId);
+		article.setTitle(title);
+		article.setBody(body);
 		int articleId = articleService.save(article);
 		if (articleId > 0) {
-			return new ResponseData(false, "添加失败");
+			return new ResponseData(true, "添加成功");
 		}
-		return new ResponseData(true, "添加成功");
+		return new ResponseData(false, "添加失败");
 	}
 
 	@RequestMapping(value = "/query/id", method = RequestMethod.POST)

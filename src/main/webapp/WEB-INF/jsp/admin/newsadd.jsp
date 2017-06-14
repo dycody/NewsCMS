@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html ng-app="cmsApp">
 <head>
 <jsp:include flush="true" page="/WEB-INF/jsp/common/head.jsp"></jsp:include>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini"
+	ng-controller="${moduleCode}Controller" ng-cloak>
 <div class="wrapper">
 <jsp:include flush="true" page="/WEB-INF/jsp/common/header_admin.jsp"></jsp:include>
 
@@ -31,24 +32,16 @@
             <div class="box-header with-border">
               <h3 class="box-title">Compose New News</h3>
             </div>
-            <form novalidate>
+            <form role="form" name="myForm" novalidate>
 	            <!-- /.box-header -->
 	            <div class="box-body">
 	              <div class="form-group">
-	                <input class="form-control" ng-model="article.title" placeholder="Title:">
+	                <input type="text" class="form-control" name="title" ng-model="article.title" placeholder="Title:" required>
+	                <span class="help-block" style="color:red" ng-show="myForm.title.$dirty && myForm.title.$invalid">Help block with error</span>
 	              </div>
 	              <div class="form-group">
 	                    <textarea id="compose-textarea" ng-model="article.body" class="form-control" style="height: 300px">
-	                      <h1><u>我是范文样本^-^</u></h1>
-	                      <h4>小标题</h4>
-	                      <p>正文要长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长</p>
-	                      <ul>
-	                        <li>List item one</li>
-	                        <li>List item two</li>
-	                        <li>List item three</li>
-	                        <li>List item four</li>
-	                      </ul>
-	                      <p>Thank you</p>
+	                      
 	                    </textarea>
 	              </div>
 	              <div class="form-group">

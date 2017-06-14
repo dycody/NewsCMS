@@ -31,7 +31,7 @@
 							<div class="jumbotron well">
 								<h1 align="center">{{article.title}}</h1>
 								<P align="center">{{article.updateUserName}}&nbsp;&nbsp;{{article.updateDate}}</P>
-								<p>{{article.body}}</p>
+								<p ng-bind-html="article.body"></p>
 								<p align="right">
 									<a class="btn btn-primary btn-large"  href="#">参与回复</a>
 								</p>

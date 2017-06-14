@@ -19,6 +19,7 @@
 				</node>
 				<node>
 					<name>新建新闻</name>
+					<id>menu_newsadd</id>
 					<url>newsadd</url>
 				</node>
 			</children>

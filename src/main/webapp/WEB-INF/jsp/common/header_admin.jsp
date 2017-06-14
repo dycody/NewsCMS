@@ -89,7 +89,7 @@
 		<ul class="sidebar-menu">
 			<li class="header"><x:out select="$output/menu/nodes/header" /></li>
 			<x:forEach select="$output/menu/nodes/node" var="item">
-				<li class="treeview">
+				<li class="treeview" ng-class="{active:selectMenu1=='<x:out select="$item/name" />'}">
 					<a href="<x:out select="$item/url" />">
 					<i class="fa <x:out select="$item/icon" />"></i> <span><x:out select="$item/name" /></span> 
 					<x:if select="$item/children">
@@ -101,7 +101,7 @@
 					<x:if select="$item/children">
 						<ul class="treeview-menu">
 							<x:forEach select="$item/children/node" var="citem">
-								<li><a href="<x:out select="$citem/url" />">
+								<li ng-class="{active:selectMenu2=='<x:out select="$citem/name" />'}"><a href="<x:out select="$citem/url" />">
 								<i class="fa fa-circle-o"></i>
 								<x:out select="$citem/name" /></a>
 								</li>

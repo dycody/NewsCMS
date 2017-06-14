@@ -51,11 +51,11 @@
 <script src="<c:url value="/resource/"/>dist/js/demo.js"></script>
 
 
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular.js"></script>
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/ui/ui-bootstrap-tpls-0.13.1.min.js"></script>
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-sanitize.js"></script>
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-resource.min.js"></script>
-<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.3.13/angular-chosen.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.6.4/ui/ui-bootstrap-tpls-0.13.1.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.6.4/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.6.4/angular-resource.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resource/"/>js/angular-1.6.4/angular-chosen.min.js"></script>
 
 <jsp:include flush="true" page="/WEB-INF/jsp/common/alertModal.jsp" /> 
 <script type="text/javascript" src="<c:url value="/resource/"/>js/cmsApp.js"></script>

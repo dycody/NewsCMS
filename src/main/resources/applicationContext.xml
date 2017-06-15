@@ -19,5 +19,6 @@
     </context:component-scan>
     
     <import resource="classpath*:applicationContext-ds.xml"/>
+    <import resource="classpath*:applicationContext-shiro.xml"/>
     
 </beans>

@@ -8,6 +8,20 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<!-- Realm实现 -->
+	<bean id="userRealm" class="ssm.newscms.shiro.UserRealm" />
+	
+	<!-- securityManager安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="userRealm" />
+	</bean>
+	
+	<!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+        <property name="arguments" ref="securityManager"/>
+    </bean>
+    
 	<!-- web.xml中shiro的filter对应的bean -->
 	<!-- Shiro 的Web过滤器 -->
 	<bean id="shiroFilter" class="org.apache.shiro.web.ShiroFilterFactoryBean">
@@ -24,20 +38,6 @@
 			</value>
 		</property>
 	</bean>
-	
-	<!-- securityManager安全管理器 -->
-	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="userRealm" />
-	</bean>
-	
-	<!-- Realm实现 -->
-	<bean id="userRealm" class="ssm.newscms.shiro.UserRealm" />
-	
-	<!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
-    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
-        <property name="arguments" ref="securityManager"/>
-    </bean>
 	
 	 <!-- Shiro生命周期处理器-->
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
